@@ -3,7 +3,7 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    $("#articles").append('<div class="card">' + "<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + '<note style="color:red; font-size:12px;">click on the quote to enter notes</note>' + "</p>" + "</div>");
     // $("#articles").append(<div class="card-body"> + "<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>" + </div>);
 
   }
@@ -28,9 +28,9 @@ $(document).on("click", "p", function() {
       // The title of the article
       $("#notes").append("<h5>" + data.title + "</h5>");
       // An input to enter a new title
-      $("#notes").append("<input id='titleinput' name='title' >");
+      $("#notes").append("<input id='titleinput' name='title' placeholder='Enter your name here...' >");
       // A textarea to add a new note body
-      $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#notes").append("<textarea id='bodyinput' name='body' placeholder='Enter your note here...'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
       $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
