@@ -28,10 +28,10 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-// mongoose.connect("mongodb://localhost/quotesScrapperDB", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/quotesScrapperDB", { useNewUrlParser: true });
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://quote-scrapper");
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/quote-scrapper";
-mongoose.connect(MONGODB_URI);
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/quote-scrapper";
+// mongoose.connect(MONGODB_URI);
 
 // Routes
 
@@ -127,9 +127,9 @@ app.post("/articles/:id", function(req, res) {
 });
 
 // Start the server
-// app.listen(PORT, function() {
-//   console.log("App running on port " + PORT + "!");
-// });
+app.listen(PORT, function() {
+  console.log("App running on port " + PORT + "!");
+});
 
-const port = process.env.PORT || 3000;
-app.listen(port);
+// const port = process.env.PORT || 3000;
+// app.listen(port);
