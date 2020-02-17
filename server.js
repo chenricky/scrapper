@@ -49,11 +49,11 @@ app.get("/scrape", function(req, res) {
       result.title = $(this)
         .children(".text")
         .text();
-      result.link = $(".quote")
-        .children(".author")
-        .text();
+      // result.link = $(".this")
+      // .find(".author")
+      // .text();
+      
 
-      console.log(result.title);
 
       // Create a new Article using the `result` object built from scraping
       db.Article.create(result)

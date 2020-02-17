@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
     <style>
-      body { background-color: #F2F6D0 }
+      body { background-color: #DAF7A6 }
       #wrapper {
         width: 960px;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 5%;
+        padding-top: 0.5%;
       }
       #articles {
         display: inline-block;
@@ -18,14 +18,19 @@
         height: 300px;
         margin-left: auto;
         margin-right: auto;
+        {% comment %} border: 3px solid grey; {% endcomment %}
+
       }
       #notes {
         {% comment %} float: right; {% endcomment %}
-        width: 100%;
+        width: 85%;
+        border: 3px solid #4CAF50;
+        margin-left: auto;
+        margin-right: auto;
       }
       textarea, input {
         display: block;
-        width: 100%;
+        width: 95%;
         background-color: #FCF5C7;
       }
       input {
@@ -43,19 +48,21 @@
         width: 98%;
         background-color: orange;
         margin: 3px;
-        border: 3px solid #4CAF50;
+        {% comment %} border: 3px solid #4CAF50; {% endcomment %}
+        border: 3px solid orange;
+
         
         }
 
       .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 #FF33E0;
       }
     </style>
   </head>
   <body>
     <div id="wrapper">
-      <h1>Quote Scraper</h1>
-      <h2><i>Scrape quotes from http://quotes.toscrape.com</i></h2>
+      <!--<h1>Quote Scraper</h1>-->
+      <h2><i>Scrape quotes from <a  href="http://quotes.toscrape.com">quotes.topscrape.com</a></i></h2>
       <div id="articles"></div>
       <div id="notes"></div>
     </div>
