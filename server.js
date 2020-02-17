@@ -1,7 +1,8 @@
+// require('dotenv').config()
 var express = require("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-require('dotenv').config()
+
 
 // Our scraping tools
 // Axios is a promised-based http library, similar to jQuery's Ajax method
