@@ -1,6 +1,7 @@
 var express = require("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+require('dotenv').config()
 
 // Our scraping tools
 // Axios is a promised-based http library, similar to jQuery's Ajax method
@@ -124,6 +125,9 @@ app.post("/articles/:id", function(req, res) {
 });
 
 // Start the server
-app.listen(PORT, function() {
-  console.log("App running on port " + PORT + "!");
-});
+// app.listen(PORT, function() {
+//   console.log("App running on port " + PORT + "!");
+// });
+
+const port = process.env.PORT || 3000;
+app.listen(port);
