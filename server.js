@@ -29,7 +29,9 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 // mongoose.connect("mongodb://localhost/quotesScrapperDB", { useNewUrlParser: true });
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://quote-scrapper/');
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://quote-scrapper");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/quote-scrapper";
+mongoose.connect(MONGODB_URI);
 
 // Routes
 
