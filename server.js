@@ -55,9 +55,9 @@ app.get("/scrape", function(req, res) {
       result.title = $(this)
         .children(".text")
         .text();
-      // result.link = $(".this")
-      // .find(".author")
-      // .text();
+      result.link = $(".this")
+      .find(".author")
+      .text();
       
 
 
